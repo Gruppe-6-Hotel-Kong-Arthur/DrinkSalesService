@@ -18,12 +18,12 @@ def init_db():
     cursor = connection.cursor()
 
     # Create the drink_sales table
-    cursor.execute("""CREATE TABLE drink_sales (
+    cursor.execute("""CREATE TABLE IF NOT EXISTS drink_sales (
             drink_id INTEGER PRIMARY KEY,
             units_sold INTEGER NOT NULL
         )
     """)
-
+    # Insert data into the drink_sales table
     for _, row in data.iterrows():
         units_sold = row['Units Sold'] 
 
