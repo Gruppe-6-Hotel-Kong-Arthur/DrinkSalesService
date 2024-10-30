@@ -13,8 +13,6 @@ def init_db():
     # Read Excel file (assuming 'Sheet1' has the data)
     data = pd.read_excel(excel_file, sheet_name="Sheet1")
 
-    print(data)
-
     # Connect to SQLite database
     connection = create_connection()
     cursor = connection.cursor()
