@@ -7,7 +7,6 @@ app = Flask(__name__)
 # Register the Blueprint
 app.register_blueprint(drink_sales_routes, url_prefix='/api/v1/drink_sales/purchase')
 
-
 # Error handler for 404 Not Found
 @app.errorhandler(404)
 def not_found(error):
@@ -18,7 +17,7 @@ def not_found(error):
 def internal_error(error):
     return jsonify({"error": "Internal server error"}), 500
 
-# Initializes database and runs Flask app on port 5004
+# Initializes database and runs Flask app on port 5006
 if __name__ == '__main__':
     init_db()
-    app.run(host='0.0.0.0', port=5006, debug=True)
+    app.run(host='0.0.0.0', port=5006)

@@ -1,5 +1,5 @@
 # Use Python 3.11 slim as the base image
-FROM python:3.11-slim
+FROM python:alpine
 
 # Copy all files from the directory
 COPY . /app

@@ -13,6 +13,8 @@ def init_db():
     # Read Excel file (assuming 'Sheet1' has the data)
     data = pd.read_excel(excel_file, sheet_name="Sheet1")
 
+    print(data)
+
     # Connect to SQLite database
     connection = create_connection()
     cursor = connection.cursor()
@@ -24,7 +26,7 @@ def init_db():
         )
     """)
     # Insert data into the drink_sales table
-    for _, row in data.iterrows():
+    for i, row in data.iterrows():
         units_sold = row['Units Sold'] 
 
         cursor.execute("""
